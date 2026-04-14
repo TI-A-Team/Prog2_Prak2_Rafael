@@ -39,7 +39,7 @@ class Baustein
 
 		for (Schnittstelle* eingang : Eingang)
 		{
-			cout << "Eingang " << i << ": Pegel = " << eingang->getPegel() << endl; i++;
+		    cout << "Eingang " << i << ": Pegel = " << eingang->getPegel() << endl; i++;
 		}
 
 		i = 0;
