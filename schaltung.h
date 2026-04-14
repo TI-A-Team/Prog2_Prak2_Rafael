@@ -1,3 +1,6 @@
+#ifndef SCHALTUNG_H_
+#define SCHALTUNG_H_
+
 #include "baustein.h"
 
 class Schaltung : public Baustein
@@ -6,3 +9,5 @@ class Schaltung : public Baustein
 	vector<Schnittstelle*> intern;
 	vector<Baustein*> bausteine;
 };
+
+#endif
