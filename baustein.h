@@ -1,14 +1,26 @@
 //Baustein class
+#ifndef BAUSTEIN_H_
+#define BAUSTEIN_H_
 
+#include "schnittstelle.h"
 #include <iostream>
 #include <vector>
-#include "schnittstelle.h"
 
 using namespace std;
+using namespace Schnittstelle;
 
 class Baustein
 {
+	protected:
+
+	string name;
+	vector<Schnittstelle*> Eingang;
+	vector<Schnittstelle*> Ausgang;
+
 	public:
+
+	friend void test2(Baustein* b);
+
 	void addEingang(Schnittstelle* schnittstelle)
 	{
 		Eingang.push_back(schnittstelle);
@@ -21,23 +33,29 @@ class Baustein
 
 	virtual void print()
 	{
-		cout << "Baustein: " << name << endl;
+		cout << "Baustein: " << this->name << endl;
 
-		for (Schnittstelle eingang : Eingang) cout << eingang << endl;
-		for (Schnittstelle ausgang : Ausgang) cout << ausgang << endl;
+		int i = 0;
+
+		for (Schnittstelle eingang : Eingang)
+		{
+			cout << "Eingang " << i << ": Pegel = " << eingang.getPegel() << endl; i++;
+		}
+
+		i = 0;
+
+		for (Schnittstelle ausgang : Ausgang)
+		{
+			cout << "Ausgang " << i << ": Pegel = " << ausgang.getPegel() << endl; i++;
+		}
 	}
 
 	virtual void update() = 0;
-
-	protected:
-	string name = "Test";
-	vector<Schnittstelle*> Eingang;
-	vector<Schnittstelle*> Ausgang;
 
 	virtual ~Baustein()
 	{
 		cout << "Aufruf des Baustein-Konstruktors" << endl;
 	}
-
-
 };
+
+#endif
