@@ -2,6 +2,7 @@
 #define XOR2_H_
 
 #include "baustein.h"
+#include <vector>
 
 class Xor2 : public Baustein
 {
@@ -17,8 +18,8 @@ class Xor2 : public Baustein
 
 	void update()
 	{
-		if (Eingang[0]->getPegel() == -1 || Eingang[1]->getPegel() == -1) Ausgang[0]->setPegel(-1); return;
-		if (Eingang[0]->getPegel() + Eingang[1]->getPegel() == 1) Ausgang[0]->setPegel(1); return;
+		if (Eingang[0]->getPegel() == -1 || Eingang[1]->getPegel() == -1){ Ausgang[0]->setPegel(-1); return;}
+		if (Eingang[0]->getPegel() + Eingang[1]->getPegel() == 1){ Ausgang[0]->setPegel(1); return;}
 			Ausgang[0]->setPegel(0);
 	}
 
