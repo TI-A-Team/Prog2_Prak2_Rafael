@@ -1,31 +1,33 @@
-//Schnittstelle class
+#ifndef SCHNITTSTELLE_H_
+#define SCHNITTSTELLE_H_
 
-class Schnittstelle
-{
-	public:
-	const static short HIGH = 1;
-	const static short LOW = 0;
-	const static short UNDEFINED = -1;
+namespace Schnittstelle {
 
-	short getPegel()
+
+	class Schnittstelle
 	{
-		return pegel;
-	}
+		public:
+		const static short HIGH = 1;
+		const static short LOW = 0;
+		const static short UNDEFINED = -1;
 
-	short setPegel(short pegel)
-	{
-		if(pegel == HIGH || pegel == LOW) this->pegel = pegel; return true;
+		short getPegel()
+		{
+			return pegel;
+		}
 
-		this->pegel = UNDEFINED; return false;
-	}
+		short setPegel(short pegel)
+		{
+			if(pegel == HIGH || pegel == LOW) this->pegel = pegel; return true;
 
-	private:
-	short pegel = LOW;
+			this->pegel = UNDEFINED; return false;
+		}
+
+		private:
+		short pegel = LOW;
 
 
+	};
+}
 
-
-
-
-
-};
+#endif
