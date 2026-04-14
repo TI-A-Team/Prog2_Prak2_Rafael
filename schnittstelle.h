@@ -18,7 +18,7 @@ class Schnittstelle
 
 	short setPegel(short pegel)
 	{
-		if(pegel == HIGH || pegel == LOW) this->pegel = pegel; return true;
+		if(pegel == HIGH || pegel == LOW){ this->pegel = pegel; return true;}
 
 		this->pegel = UNDEFINED; return false;
 	}
