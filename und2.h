@@ -17,8 +17,8 @@ class Und2 : public Baustein
 
 	void update()
 	{
-		if (Eingang[0]->getPegel() == -1 || Eingang[1]->getPegel() == -1) Ausgang[0]->setPegel(-1); break;
-		if (Eingang[0]->getPegel() == 0 || Eingang[1]->getPegel() == 0) Ausgang[0]->setPegel(0); break;
+		if (Eingang[0]->getPegel() == -1 || Eingang[1]->getPegel() == -1) Ausgang[0]->setPegel(-1); return;
+		if (Eingang[0]->getPegel() == 0 || Eingang[1]->getPegel() == 0) Ausgang[0]->setPegel(0); return;
 			Ausgang[0]->setPegel(1);
 	}
 };
