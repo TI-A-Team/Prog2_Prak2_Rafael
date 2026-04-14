@@ -1,27 +1,30 @@
-//Not1 Class
+#ifndef NOT1_H_
+#define NOT1_H_
+
 #include "baustein.h"
-#include <vector>
+
+using namespace Schnittstelle;
 
 class Not1 : public Baustein
 {
+	public:
+
 	Not1(Schnittstelle* e0, Schnittstelle* a0)
 	{
-		Eingang.push_back(e0);
-		Ausgang.push_back(a0);
-
-		name = "Not1";
+		this->Eingang.push_back(e0);
+		this->Ausgang.push_back(a0);
+		this->name = "Not1";
 	}
 
-	public:
 	void update()
 	{
-		switch (Eingang[0])
+		switch (this->Eingang[0]->getPegel())
 		{
-			case Schnittstelle::HIGH: *Ausgang[0] = Schnittstelle::LOW; break;
-			case Schnittstelle::LOW: *Ausgang[0] = Schnittstelle::HIGH; break;
-			case Schnittstelle::UNDEFINED: *Ausgang[0] = Schnittstelle::UNDEFINED; break;
+			case 1: Ausgang[0]->setPegel(0); break;
+			case 0: Ausgang[0]->setPegel(1); break;
+			case -1: Ausgang[0]->setPegel(-1); break;
 		}
-
 	}
-
 };
+
+#endif
