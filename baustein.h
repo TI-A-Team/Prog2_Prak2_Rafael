@@ -7,7 +7,7 @@
 #include <vector>
 
 using namespace std;
-using namespace Schnittstelle;
+//using namespace Schnittstelle;
 
 class Baustein
 {

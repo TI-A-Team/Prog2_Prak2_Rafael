@@ -6,7 +6,8 @@
 
 class Halbaddierer : public Schaltung
 {
-
+//Any class content is private by default, therefore you have to declare if anything is public - even the constructor
+public:
 	Halbaddierer(Schnittstelle* e0, Schnittstelle* e1, Schnittstelle* a0, Schnittstelle* a1)
 	{
 		this->Eingang.push_back(e0);
