@@ -2,6 +2,7 @@
 #define ODER2_H_
 
 #include "baustein.h"
+#include <vector>
 
 class Oder2 : public Baustein
 {
@@ -19,8 +20,8 @@ class Oder2 : public Baustein
 	void update()
 	{
 		//do not use break keyword in if statement. In order to escape from a void function, just use return
-		if (Eingang[0]->getPegel() == -1 || Eingang[1]->getPegel() == -1) Ausgang[0]->setPegel(-1); return;
-		if (Eingang[0]->getPegel() == 1 || Eingang[1]->getPegel() == 1) Ausgang[0]->setPegel(1); return;
+		if (Eingang[0]->getPegel() == -1 || Eingang[1]->getPegel() == -1){ Ausgang[0]->setPegel(-1); return; }
+		if (Eingang[0]->getPegel() == 1 || Eingang[1]->getPegel() == 1){ Ausgang[0]->setPegel(1); return; }
 			Ausgang[0]->setPegel(0);
 	}
 
