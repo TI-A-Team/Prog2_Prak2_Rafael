@@ -2,6 +2,7 @@
 #define VOLLADDIERER_H_
 
 #include "halbaddierer.h"
+#include <vector>
 
 class Volladdierer : public Schaltung
 {
