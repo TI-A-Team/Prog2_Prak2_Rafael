@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-//#include "schnittstelle.h"
+#include "schnittstelle.h"
 #include "baustein.h"
 //#include "not1.h"
 #include "oder2.h"
@@ -48,8 +48,11 @@ int main()
 	Schnittstelle a0;
 	Schnittstelle a1;
 
-	Oder2 oder2(&e0, &e1, &a0);
-	test2(&oder2);
+	Halbaddierer halb(&e0, &e1, &a0, &a1);
+	test2(&halb);
+
+	int x;
+	cin >> x;
 
 	return 0;
 }
